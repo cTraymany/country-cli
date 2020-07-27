@@ -9,7 +9,8 @@ class CLI
     # end
 
     # def get_photo_by_date(date)
-    #     API.get_photo_by_date(date)
+    #   puts please enter a date (mm/dd/yyyy)
+    #   API.get_photo_by_date(date)
     # end
 
 end
