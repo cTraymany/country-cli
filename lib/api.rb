@@ -2,6 +2,7 @@
 
 class API
     @@url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+    #  demo key only returns today's photo. sign up for full api key
 
     def self.url
         @@url
