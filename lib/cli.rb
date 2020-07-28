@@ -7,7 +7,14 @@ class CLI
     end
 
     def self.get_country(calling_code)
-        API.get_country_by_calling_code(calling_code)
+        country_data = API.get_country_by_calling_code(calling_code)
+        Country.new(country_data)
+        # binding.pry
+        puts "You chose #{country_data[:name]}!"
+
     end
+
+
+
 
 end

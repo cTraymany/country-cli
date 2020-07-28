@@ -6,16 +6,17 @@ class API
 
         country_data = {}
 
-        response.map do |hash|
-            country_data = {
-                name: hash["name"],
-                region: hash["region"],
-                population: hash["population"],
-                capital: hash["capital"],
-                # borders: hash["borders"],
-                # languages: hash["languages"],
-                flag_link: hash["flag"],
-            }
+        response.each do |hash|
+            country_data[:name] = hash["name"]
+            country_data[:region] = hash["region"],
+            country_data[:population] = hash["population"],
+            country_data[:capital] = hash["capital"],
+            # country_data[:borders] = hash["borders"],
+            # country_data[:languages] = hash["languages"],
+            country_data[:flag_link] = hash["flag"]
+            binding.pry
+
+
         end
         country_data
     end
