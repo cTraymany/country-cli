@@ -11,27 +11,28 @@ class CLI
         calling_code = gets.chomp
 
         ##############ENTER CONTROL FLOW FOR EXIT
-        
-        if API.valid_country?(calling_code.to_i)
-            countries = API.extract_country(calling_code.to_i)
-            puts ""
-            puts "This country code returns:"
-            Country.get_country_from_array(countries)
-            self.get_country(calling_code)
-        else
-            puts ""
-            puts "Your input does not belong to a country!"
-            puts ""
-            puts "Please enter a valid country code."
-            self.get_country_by_calling_code
+        unless calling_code == 'exit'
+            if API.valid_country?(calling_code.to_i)
+                countries = API.extract_country(calling_code.to_i)
+                puts ""
+                puts "This country code returns:"
+                Country.get_country_from_array(countries)
+                self.get_country(calling_code)
+            else
+                puts ""
+                puts "Your input does not belong to a country!"
+                puts ""
+                puts "Please enter a valid country code."
+                self.get_country_by_calling_code
+            end
         end
-        
         
     end
 
 
     def self.get_country(calling_code)
-        # while calling_code != 'exit'
+        ##############ENTER CONTROL FLOW FOR EXIT
+        unless calling_code == 'exit'
 
 
 
@@ -67,7 +68,7 @@ class CLI
             puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
             puts ""
         
-        
+        end
     end
     
     
