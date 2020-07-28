@@ -34,7 +34,7 @@ class CLI
         
         puts "You chose #{new_country.name}!"
         puts "#{new_country.name} has a population of #{new_country.population}."
-        puts "It is located in the region of #{new_country.region[0]}, and its capital is #{new_country.capital}."
+        puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
         puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
         
         
