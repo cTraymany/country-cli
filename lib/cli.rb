@@ -29,10 +29,9 @@ class CLI
 
     ########## ABOVE CODE EXITS AS EXPECTED!
 
-    ########## BELOW CODE DOES NOT EXIT AS EXPECTED!
+    ########## BELOW CODE EXITS BUT RETURNS ERROR
 
     def self.get_country(calling_code)
-        binding.pry #if you've gotten this far, the calling code is not == 'exit'
         countries_data = API.get_country_by_calling_code(calling_code.to_i) # returns an array of nested country hashes
 
         puts ""
@@ -49,7 +48,6 @@ class CLI
                 puts "Your entry is invalid!"
                 self.get_country(calling_code)
             end
-            # binding.pry
             
             puts ""
             puts ""
@@ -60,6 +58,9 @@ class CLI
             puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
             puts ""
             puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
+            puts ""
+            puts "Would you like to search for another country?"
+            puts "Y / N"
             puts ""
         end    
     end
