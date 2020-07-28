@@ -9,9 +9,15 @@ class CLI
     def self.get_country(calling_code)
         countries = API.extract_country(calling_code)
         countries_data = API.get_country_by_calling_code(calling_code) # returns an array of nested country hashes
-        
-        puts "This country code returns:"
-        Country.get_country_from_array(countries)
+
+        if countries_data == nil
+            puts "This code does not have a counry!"
+            puts "Please enter a valid country code."
+            # loop to the beginning of asking for code
+        else
+            puts "This country code returns:"
+            Country.get_country_from_array(countries)
+        end
         
         puts "Please enter the country number you would like to see."
         country_choice = gets.chomp
