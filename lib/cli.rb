@@ -22,16 +22,15 @@ class CLI
         puts "#{new_country.name} has a population of #{new_country.population}."
         puts "It is located in the region of #{new_country.region[0]}, and its capital is #{new_country.capital}."
         puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
-
-            #test test test
-
+        
         # binding.pry
+        
     end
-
-
-
-
-
+    
+    
+    
+    
+    
 
     #     countries_data = API.get_country_by_calling_code(calling_code)
     #     # returns an array of nested country hashes
