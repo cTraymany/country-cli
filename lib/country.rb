@@ -3,7 +3,7 @@ class Country
     @@all = []
 
     def initialize(hash)
-        @name = hash[:name]
+        @name = hash[:name][0]
         @region = hash[:region]
         @population = hash[:population]
         @capital = hash[:capital]
@@ -23,7 +23,7 @@ class Country
     end
 
     def self.get_country_from_array(countries_array)
-        countries_array.each_with_index { |country, index| puts "#{index += 1}. #{country}" }
+        countries_array.each_with_index { |country, index| puts "#{index += 1}. #{country[0]}" }
         # puts out each country in countries array
     end
 
