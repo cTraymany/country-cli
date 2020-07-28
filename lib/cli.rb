@@ -17,7 +17,8 @@ class CLI
             self.get_country(calling_code)
         else
             puts ""
-            puts "This code does not have a country!"
+            puts "Your input does not belong to a country!"
+            puts ""
             puts "Please enter a valid country code."
             self.get_country_by_calling_code
         end
@@ -31,10 +32,19 @@ class CLI
 
         puts ""
         puts "Please enter the country number you would like to see."
+        binding.pry
         input = gets.chomp
-        #############ADD ERROR HANDLING HERE
         
-        new_country = Country.new(countries_data[input.to_i - 1])
+        if input > 0 && input <= countries_data.length
+            new_country = Country.new(countries_data[input.to_i - 1])
+        else
+            puts ""
+            
+        end
+        #############ADD ERROR HANDLING HERE
+
+
+        
         binding.pry
         
         puts ""
