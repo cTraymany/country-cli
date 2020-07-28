@@ -2,7 +2,11 @@ class Country
     attr_accessor :name, :region, :population, :capital, :flag_link#, :borders, :languages
     @@all = []
 
-    def initialize(hash)
+
+
+
+
+    def country(hash)
         @name = hash["name"]
         @region = hash["region"]
         @population = hash["population"]

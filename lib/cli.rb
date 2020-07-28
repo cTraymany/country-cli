@@ -7,13 +7,22 @@ class CLI
     end
 
     def self.get_country(calling_code)
-        country_data = API.get_country_by_calling_code(calling_code)
-        Country.new(country_data)
-        # binding.pry
-        puts "You chose #{country_data[:name]}!"
+        countries = API.extract_country(calling_code)
+        puts "This country code returns:"
+        countries.each_with_index { |country, index| puts "#{index += 1}. #{country}" }
+        
+        # puts "Please list the country you would like to see."
+        # country = gets.chomp.downcase
+        binding.pry
+
+        # Country.new(countries_by_code)
+        # puts "You chose #{countries_by_code}!"
 
     end
 
+    def list_country_facts
+
+    end
 
 
 
