@@ -23,7 +23,7 @@ class CLI
         puts "It is located in the region of #{new_country.region[0]}, and its capital is #{new_country.capital}."
         puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
 
-
+            #test test test
 
         # binding.pry
     end
