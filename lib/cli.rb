@@ -39,13 +39,11 @@ class CLI
             new_country = Country.new(countries_data[input.to_i - 1])
         else
             puts ""
-            
+            puts "Your entry is invalid!"
+            self.get_country(calling_code)
         end
-        #############ADD ERROR HANDLING HERE
 
-
-        
-        binding.pry
+        # binding.pry
         
         puts ""
         puts "You chose #{new_country.name}!"
