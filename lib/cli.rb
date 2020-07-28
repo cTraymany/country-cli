@@ -62,7 +62,23 @@ class CLI
             puts "Would you like to search for another country?"
             puts "Y / N"
             puts ""
+
+
+            # unfinished code
+            # input = gets.chomp.upcase
+            # unless input == 'exit'
+            #     if input == 'Y'
+
+            #     elsif input == "N"
+
+            #     else
+                    
+            #     end
+            # end
+
+
         end    
+
     end
         
     
