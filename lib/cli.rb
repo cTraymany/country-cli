@@ -31,11 +31,11 @@ class CLI
         countries_data = API.get_country_by_calling_code(calling_code.to_i) # returns an array of nested country hashes
 
         puts ""
-        puts "Please enter the country number you would like to see."
-        binding.pry
+        puts "Please enter the number you would like to see."
+        
         input = gets.chomp
         
-        if input > 0 && input <= countries_data.length
+        if (1..countries_data.length).include?(input.to_i)
             new_country = Country.new(countries_data[input.to_i - 1])
         else
             puts ""
