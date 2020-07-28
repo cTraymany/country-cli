@@ -34,8 +34,10 @@ class CLI
         puts "Please enter the number you would like to see."
         
         input = gets.chomp
+        input = input.to_i
         
-        if (1..countries_data.length).include?(input.to_i)
+        # binding.pry
+        if (1..countries_data.length).include?(input)
             new_country = Country.new(countries_data[input.to_i - 1])
         else
             puts ""
