@@ -10,7 +10,6 @@ class CLI
     def self.get_country_by_calling_code
         calling_code = gets.chomp
 
-        ##############ENTER CONTROL FLOW FOR EXIT
         unless calling_code == 'exit'
             if API.valid_country?(calling_code.to_i)
                 countries = API.extract_country(calling_code.to_i)
@@ -26,18 +25,14 @@ class CLI
                 self.get_country_by_calling_code
             end
         end
-        
     end
+
+    ########## ABOVE CODE EXITS AS EXPECTED!
 
 
     def self.get_country(calling_code)
         ##############ENTER CONTROL FLOW FOR EXIT
         unless calling_code == 'exit'
-
-
-
-
-
             countries_data = API.get_country_by_calling_code(calling_code.to_i) # returns an array of nested country hashes
 
             puts ""
@@ -50,9 +45,12 @@ class CLI
             if (1..countries_data.length).include?(input)
                 new_country = Country.new(countries_data[input.to_i - 1])
             else
-                puts ""
-                puts "Your entry is invalid!"
-                self.get_country(calling_code)
+                unless calling_code == 'exit'
+
+                    puts ""
+                    puts "Your entry is invalid!"
+                    self.get_country(calling_code)
+                end
             end
 
             # binding.pry
@@ -67,7 +65,7 @@ class CLI
             puts ""
             puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
             puts ""
-        
+
         end
     end
     
