@@ -1,8 +1,6 @@
 class Country
-    attr_accessor
+    attr_accessor :name, :region, :capital, :flag_link#, :borders, :languages
     @@all = []
-
-
 
 
 

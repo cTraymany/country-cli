@@ -1,12 +1,13 @@
 class CLI
 
     def self.run
-        puts "Welcome! What country would you like to learn about?"
-        input = gets.chomp
+        puts "Welcome! Please enter the calling code for the coutry you would like to learn about."
+        calling_code = gets.chomp
+        self.get_country(calling_code)
     end
 
-    def get_country(calling_code)
-
+    def self.get_country(calling_code)
+        API.get_country_by_calling_code(calling_code)
     end
 
 end
