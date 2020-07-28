@@ -1,17 +1,12 @@
 class CLI
 
-    def run
-        # puts "welcome message and app intro here"
+    def self.run
+        puts "Welcome! What country would you like to learn about?"
+        input = gets.chomp
     end
 
-    def get_photo
-        binding.pry
-        API.get_photo
-    end
+    def get_country(calling_code)
 
-    # def get_photo_by_date(date)
-    #   puts please enter a date (mm/dd/yyyy)
-    #   API.get_photo_by_date(date)
-    # end
+    end
 
 end

@@ -1,5 +1,5 @@
-class AstronomyPhoto
-    attr_accessor :caption, :date
+class Country
+    attr_accessor
     @@all = []
 
 

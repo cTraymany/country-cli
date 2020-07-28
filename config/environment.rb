@@ -9,4 +9,4 @@ require 'httparty'
 # two dots mean "look in a folder above the current folder"
 require_relative '../lib/api.rb'
 require_relative '../lib/cli.rb'
-require_relative '../lib/astronomy-photo.rb'
+require_relative '../lib/country.rb'
