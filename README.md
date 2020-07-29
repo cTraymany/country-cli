@@ -21,8 +21,8 @@ or
 ### Built With
 [VS Code](https://code.visualstudio.com/) - text editor
 
-<!-- ### Contributing
-See CONTRIBUTING.md for details on code of conduct, and the process for submitting pull requests. -->
+### Contributing
+See CONTRIBUTING.md for details on code of conduct.
 
 ### Authors
 Chindalath Traymany -  cTraymany
