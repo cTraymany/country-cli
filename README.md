@@ -10,15 +10,13 @@ This app is run with Ruby. Please have Ruby installed before beginning.
 Fork and clone this repository onto your terminal.
 
 ### Installing
-A step by step series of examples that tell you how to get a development env running
+    $ bundle install
+    $ bin/run
 
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+If permission is required, run
+    $ chmod 777 bin/run
+or
+    $ chmod 777 {path to file}
 
 ### Built With
 [VS Code](https://code.visualstudio.com/) - text editor
