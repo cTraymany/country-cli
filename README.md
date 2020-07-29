@@ -9,7 +9,8 @@ This app is run with Ruby. Please have Ruby installed before beginning.
 
 Fork and clone this repository onto your terminal.
 
-### Installing
+### Installing and Deploying
+    $ cd country-cli
     $ bundle install
     $ bin/run
 
