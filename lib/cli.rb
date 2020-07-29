@@ -59,32 +59,37 @@ class CLI
             puts ""
             puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
             puts ""
+            
+            self.get_another_country
+        end    
+        
+        def self.get_another_country
             puts "Would you like to search for another country?"
             puts "Y / N"
             puts ""
-
-
+        
+        
             # unfinished code
             # input = gets.chomp.upcase
             # unless input == 'exit'
             #     if input == 'Y'
-
+        
             #     elsif input == "N"
-
+        
             #     else
                     
             #     end
             # end
 
-
-        end    
-
-    end
+        end
         
+    end
     
     
     
     
+    
+
 
     #     countries_data = API.get_country_by_calling_code(calling_code)
     #     # returns an array of nested country hashes
