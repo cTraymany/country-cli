@@ -2,7 +2,10 @@ class CLI
 
     def self.run
         puts ""
-        puts "Welcome! Please enter the calling code for the coutry you would like to learn about."
+        puts "Well, hello there!"
+        puts "You seem like someone who appreciates geography."
+        puts "To get started, enter a country code!"
+        puts "If you're stuck, try '856,' the country code for Laos!"
         puts "To exit, enter 'exit' at any time."
         self.get_country_by_calling_code
     end
@@ -70,7 +73,6 @@ class CLI
         self.more_options
     end
 
-
     def self.more_options
         puts "To clear your countries, enter 'clear'."
         puts "To view another country, type 'view'."
@@ -88,7 +90,6 @@ class CLI
             end
         end
     end
-
 
     #     countries_data = API.get_country_by_calling_code(calling_code)
     #     # returns an array of nested country hashes
