@@ -64,58 +64,30 @@ class CLI
         end    
     end
         
-        def self.view_my_collection
-            puts "You have viewed the following countries:"
-            Country.countries_viewed
-            self.more_options
-        end
+    def self.view_my_collection
+        puts "You have viewed the following countries:"
+        Country.countries_viewed
+        self.more_options
+    end
 
 
-        def self.more_options
-            puts "To clear your countries, enter 'clear'."
-            puts "To view another country, type 'view'."
-            puts "To exit, type 'exit'."
-            inputs = gets.chomp.downcase
+    def self.more_options
+        puts "To clear your countries, enter 'clear'."
+        puts "To view another country, type 'view'."
+        puts "To exit, type 'exit'."
+        inputs = gets.chomp.downcase
 
-            unless input == 'exit'
-                if input == 'view'
-                     self.get_another_country
-                elsif input == 'clear'
-                    Country.clear_countries
-                else
-                    puts "I did't quite catch that.."
-                    self.more_options
-                end
+        unless input == 'exit'
+            if input == 'view'
+                    self.get_another_country
+            elsif input == 'clear'
+                Country.clear_countries
+            else
+                puts "I did't quite catch that.."
+                self.more_options
             end
         end
-
-        def self.get_another_country
-            puts ""
-            puts "Would you like to search for another country?"
-            puts "Y / N"
-            puts ""
-        
-        
-            # unfinished code
-            # input = gets.chomp.upcase
-            # unless input == 'exit'
-            #     if input == 'Y'
-        
-            #     elsif input == "N"
-        
-            #     else
-                    
-            #     end
-            # end
-
-        end
-
-        
-    
-    
-    
-    
-    
+    end
 
 
     #     countries_data = API.get_country_by_calling_code(calling_code)
@@ -125,16 +97,5 @@ class CLI
     #     Country.new(countries_data[input.to_i - 1])
     #     # passes argument into Country, creating a new instance
     #     # this argument returns a hash of information from the countries_data array about the selected country
-        
-        
-        
-        
-        
-
-        
-    
-
-    
-
 
 end

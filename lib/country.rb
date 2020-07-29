@@ -30,10 +30,5 @@ class Country
         countries_array.each_with_index { |country, index| puts "#{index += 1}. #{country[0]}" }
         # puts out each country in countries array
     end
-
-    # def 
-
-    # end
-
 end
 
