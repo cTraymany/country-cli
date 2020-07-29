@@ -60,10 +60,37 @@ class CLI
             puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
             puts ""
             
-            self.get_another_country
+            self.view_my_collection
         end    
+    end
         
+        def self.view_my_collection
+            puts "You have viewed the following countries:"
+            Country.countries_viewed
+            self.more_options
+        end
+
+
+        def self.more_options
+            puts "To clear your countries, enter 'clear'."
+            puts "To view another country, type 'view'."
+            puts "To exit, type 'exit'."
+            inputs = gets.chomp.downcase
+
+            unless input == 'exit'
+                if input == 'view'
+                     self.get_another_country
+                elsif input == 'clear'
+                    Country.clear_countries
+                else
+                    puts "I did't quite catch that.."
+                    self.more_options
+                end
+            end
+        end
+
         def self.get_another_country
+            puts ""
             puts "Would you like to search for another country?"
             puts "Y / N"
             puts ""
@@ -82,8 +109,8 @@ class CLI
             # end
 
         end
+
         
-    end
     
     
     
