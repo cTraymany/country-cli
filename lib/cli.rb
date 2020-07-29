@@ -46,7 +46,7 @@ class CLI
                 puts "🌏You chose #{new_country.name}!"
                 puts "#{new_country.name} has a population of #{new_country.population}."
                 puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
-                puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
+                puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link} 📷"
                 puts ""
                 
                 self.view_my_collection
@@ -61,24 +61,26 @@ class CLI
     def self.view_my_collection
         puts "🌍 You have viewed the following countries:"
         Country.countries_viewed
-        puts ""
         self.more_options
     end
 
     def self.more_options
+        puts ""
         puts "To clear your countries, enter 'clear'."
         puts "To view another country, type 'view'."
         puts "To exit, type 'exit'."
         input = gets.chomp.downcase
 
-        ###########fix error message displayed upon exiting
         unless input == 'exit'
             input = input.downcase
             if input == 'view'
                 self.get_country
             elsif input == 'clear'
                 Country.clear_countries
+                puts ""
+                puts "Your countries have been cleared."
             else
+                puts ""
                 puts "I did't quite catch that.."
                 self.more_options
             end
