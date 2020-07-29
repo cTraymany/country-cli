@@ -44,11 +44,8 @@ class CLI
                 puts ""
                 puts ""
                 puts "You chose #{new_country.name}!"
-                puts ""
                 puts "#{new_country.name} has a population of #{new_country.population}."
-                puts ""
                 puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
-                puts ""
                 puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
                 puts ""
                 
@@ -63,6 +60,7 @@ class CLI
         
     def self.view_my_collection
         puts "You have viewed the following countries:"
+        puts ""
         Country.countries_viewed
         self.more_options
     end
@@ -73,6 +71,7 @@ class CLI
         puts "To exit, type 'exit'."
         inputs = gets.chomp.downcase
 
+        ###########fix error message displayed upon exiting
         unless input == 'exit'
             if input == 'view'
                     self.get_another_country
