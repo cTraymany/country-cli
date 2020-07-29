@@ -22,6 +22,10 @@ class Country
         self.all.each { |country| puts country.name }
     end
 
+    def self.clear_countries
+        self.all.clear
+    end
+
     def self.get_country_from_array(countries_array)
         countries_array.each_with_index { |country, index| puts "#{index += 1}. #{country[0]}" }
         # puts out each country in countries array
