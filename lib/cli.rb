@@ -74,11 +74,14 @@ class CLI
         unless input == 'exit'
             input = input.downcase
             if input == 'view'
-                self.get_country
+                puts ""
+                puts "🌍 Enter a country's calling code!"
+                self.get_country_by_calling_code
             elsif input == 'clear'
                 Country.clear_countries
                 puts ""
                 puts "Your countries have been cleared."
+                self.more_options
             else
                 puts ""
                 puts "I did't quite catch that.."
@@ -86,11 +89,6 @@ class CLI
             end
         end
     end
-
-    #     countries_data = API.get_country_by_calling_code(calling_code)
-    #     # returns an array of nested country hashes
-        
-        
     #     Country.new(countries_data[input.to_i - 1])
     #     # passes argument into Country, creating a new instance
     #     # this argument returns a hash of information from the countries_data array about the selected country
