@@ -41,9 +41,12 @@ class CLI
             input = input.to_i
             if (1..countries_data.length).include?(input)
                 new_country = Country.new(countries_data[input.to_i - 1])
+                    # Country.new(countries_data[input.to_i - 1])
+                    # passes argument into Country, creating a new instance
+                    # this argument returns a hash of information from the countries_data array about the selected country
                 puts ""
                 puts ""
-                puts "🌏You chose #{new_country.name}!"
+                puts "🌏 You chose #{new_country.name}!"
                 puts "#{new_country.name} has a population of #{new_country.population}."
                 puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
                 puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link} 📷"
@@ -89,8 +92,4 @@ class CLI
             end
         end
     end
-    #     Country.new(countries_data[input.to_i - 1])
-    #     # passes argument into Country, creating a new instance
-    #     # this argument returns a hash of information from the countries_data array about the selected country
-
 end
