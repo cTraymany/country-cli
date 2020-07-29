@@ -64,12 +64,12 @@ class CLI
     def self.view_my_collection
         puts "🌍 You have viewed the following countries:"
         Country.countries_viewed
+        puts ""
+        puts "To clear your countries, enter 'clear'."
         self.more_options
     end
 
     def self.more_options
-        puts ""
-        puts "To clear your countries, enter 'clear'."
         puts "To view another country, type 'view'."
         puts "To exit, type 'exit'."
         input = gets.chomp.downcase
@@ -88,6 +88,8 @@ class CLI
             else
                 puts ""
                 puts "I did't quite catch that.."
+                puts ""
+                puts "To clear your countries, enter 'clear'."
                 self.more_options
             end
         end

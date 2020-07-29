@@ -11,7 +11,6 @@ class Country
         # @borders = hash[:borders]
         # @languages = hash[:languages]
         self.class.all << self unless self.class.all.include?(self)
-        # binding.pry
     end
 
     def self.all
@@ -19,7 +18,7 @@ class Country
     end
 
     def self.countries_viewed
-        self.all.each { |country| puts country.name }
+        self.all.each { |country| puts "    -#{country.name}" }
     end
 
     def self.clear_countries
@@ -27,7 +26,7 @@ class Country
     end
 
     def self.get_country_from_array(countries_array)
-        countries_array.each_with_index { |country, index| puts "#{index += 1}. #{country[0]}" }
+        countries_array.each_with_index { |country, index| puts "   #{index += 1}. #{country[0]}" }
         # puts out each country in countries array
     end
 end
