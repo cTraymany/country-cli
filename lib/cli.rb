@@ -60,8 +60,8 @@ class CLI
         
     def self.view_my_collection
         puts "You have viewed the following countries:"
+        puts "🌍 #{Country.countries_viewed}"
         puts ""
-        Country.countries_viewed
         self.more_options
     end
 
@@ -73,6 +73,7 @@ class CLI
 
         ###########fix error message displayed upon exiting
         unless input == 'exit'
+            input.downcase
             if input == 'view'
                     self.get_another_country
             elsif input == 'clear'
