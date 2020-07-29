@@ -2,10 +2,10 @@ class CLI
 
     def self.run
         puts ""
-        puts "Well, hello there!"
+        puts "Well, hello there! 👋"
         puts "You seem like someone who appreciates geography."
         puts "To get started, enter a country's calling code!"
-        puts "If you're stuck, try '856,' the country code for Laos!"
+        puts "If you're stuck, try '856,' the country code for Laos! 🇱🇦"
         puts "To exit, enter 'exit' at any time."
         self.get_country_by_calling_code
     end
