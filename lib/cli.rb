@@ -17,7 +17,7 @@ class CLI
             if API.valid_country?(calling_code.to_i)
                 countries = API.extract_country(calling_code.to_i)
                 puts ""
-                puts "This country code returns:"
+                puts "🌎 This country code returns:"
                 Country.get_country_from_array(countries)
                 self.get_country(calling_code)
             else
@@ -43,7 +43,7 @@ class CLI
                 new_country = Country.new(countries_data[input.to_i - 1])
                 puts ""
                 puts ""
-                puts "You chose #{new_country.name}!"
+                puts "🌏You chose #{new_country.name}!"
                 puts "#{new_country.name} has a population of #{new_country.population}."
                 puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
                 puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
@@ -59,8 +59,8 @@ class CLI
     end
         
     def self.view_my_collection
-        puts "You have viewed the following countries:"
-        puts "🌍 #{Country.countries_viewed}"
+        puts "🌍 You have viewed the following countries:"
+        Country.countries_viewed
         puts ""
         self.more_options
     end
@@ -69,13 +69,13 @@ class CLI
         puts "To clear your countries, enter 'clear'."
         puts "To view another country, type 'view'."
         puts "To exit, type 'exit'."
-        inputs = gets.chomp.downcase
+        input = gets.chomp.downcase
 
         ###########fix error message displayed upon exiting
         unless input == 'exit'
-            input.downcase
+            input = input.downcase
             if input == 'view'
-                    self.get_another_country
+                self.get_country
             elsif input == 'clear'
                 Country.clear_countries
             else
