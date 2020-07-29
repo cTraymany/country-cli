@@ -27,9 +27,7 @@ class API
     end
 
     def self.extract_country(calling_code)
-        countries = []
         countries_by_code = API.get_country_by_calling_code(calling_code)
-        countries_by_code.each { |country| countries << country[:name] }
-        countries
+        countries_by_code.map { |country| country[:name] }
     end
 end
