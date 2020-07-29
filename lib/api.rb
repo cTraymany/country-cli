@@ -1,8 +1,7 @@
 class API
 
     def self.valid_country?(calling_code)
-        # binding.pry
-        url = url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
+        url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url, follow_redirects: true)
         response.ok?
     end

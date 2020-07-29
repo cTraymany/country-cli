@@ -4,7 +4,7 @@ class CLI
         puts ""
         puts "Well, hello there!"
         puts "You seem like someone who appreciates geography."
-        puts "To get started, enter a country code!"
+        puts "To get started, enter a country's calling code!"
         puts "If you're stuck, try '856,' the country code for Laos!"
         puts "To exit, enter 'exit' at any time."
         self.get_country_by_calling_code
@@ -23,16 +23,11 @@ class CLI
             else
                 puts ""
                 puts "Your input does not belong to a country!"
-                puts ""
                 puts "Please enter a valid country code."
                 self.get_country_by_calling_code
             end
         end
     end
-
-    ########## ABOVE CODE EXITS AS EXPECTED!
-
-    ########## BELOW CODE EXITS BUT RETURNS ERROR
 
     def self.get_country(calling_code)
         countries_data = API.get_country_by_calling_code(calling_code.to_i) # returns an array of nested country hashes
@@ -46,24 +41,23 @@ class CLI
             input = input.to_i
             if (1..countries_data.length).include?(input)
                 new_country = Country.new(countries_data[input.to_i - 1])
+                puts ""
+                puts ""
+                puts "You chose #{new_country.name}!"
+                puts ""
+                puts "#{new_country.name} has a population of #{new_country.population}."
+                puts ""
+                puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
+                puts ""
+                puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
+                puts ""
+                
+                self.view_my_collection
             else
                 puts ""
                 puts "Your entry is invalid!"
                 self.get_country(calling_code)
             end
-            
-            puts ""
-            puts ""
-            puts "You chose #{new_country.name}!"
-            puts ""
-            puts "#{new_country.name} has a population of #{new_country.population}."
-            puts ""
-            puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
-            puts ""
-            puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link}."
-            puts ""
-            
-            self.view_my_collection
         end    
     end
         
