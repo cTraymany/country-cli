@@ -4,6 +4,7 @@ class API
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url, follow_redirects: true)
         response.ok?
+        
     end
 
     def self.get_country_by_calling_code(calling_code)
@@ -31,3 +32,5 @@ class API
         countries_by_code.map { |country| country[:name] }
     end
 end
+
+#  test
