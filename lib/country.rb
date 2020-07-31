@@ -18,7 +18,7 @@ class Country
     end
 
     def self.countries_viewed
-        self.all.each { |country| puts "    -#{country.name}" }
+        self.all.map { |country| country.name }
         # refactor so there's no puts in this class
     end
 

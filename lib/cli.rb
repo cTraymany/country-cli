@@ -63,7 +63,9 @@ class CLI
         
     def self.view_my_collection
         puts "🌍 You have viewed the following countries:"
-        Country.countries_viewed
+        Country.countries_viewed.each {|country| puts "   -#{country}"}
+        # binding.pry
+    
         puts ""
         puts "To clear your countries, enter 'clear'."
         self.more_options
