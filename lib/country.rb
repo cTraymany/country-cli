@@ -19,6 +19,7 @@ class Country
 
     def self.countries_viewed
         self.all.each { |country| puts "    -#{country.name}" }
+        # take out puts in this class and puts instead in the CLI class
     end
 
     def self.clear_countries
@@ -31,3 +32,5 @@ class Country
     end
 end
 
+# how can we create a find_or_create_by_calling_code method so that we don't have
+# to keep sending requests if a user searches for the same countries?
