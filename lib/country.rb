@@ -19,6 +19,7 @@ class Country
 
     def self.countries_viewed
         self.all.each { |country| puts "    -#{country.name}" }
+        # refactor so there's no puts in this class
     end
 
     def self.clear_countries
@@ -28,6 +29,10 @@ class Country
     def self.get_country_from_array(countries_array)
         countries_array.each_with_index { |country, index| puts "   #{index += 1}. #{country[0]}" }
         # puts out each country in countries array
+        # refactor so there's no puts in this class
     end
 end
+
+# add a find_or_create_by_name method so we don't send multiple requests for the
+# same country
 
