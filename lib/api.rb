@@ -2,8 +2,8 @@ class API
 
     def self.valid_country?(calling_code)
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
-        response = HTTParty.get(url, follow_redirects: true)
-        response.ok?
+        response = HTTParty.get(url, follow_redirects: true) # sends request for data to url
+        response.ok? # returns a boolean
         # refactor so the below method doesn't sent request again
     end
 
@@ -11,9 +11,8 @@ class API
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url)
 
-        countries_by_code = []
 
-        response.each do |hash|
+        test = response.map do |hash|
             country_data = {}
             country_data[:name] = hash["name"],
             country_data[:region] = hash["region"],
@@ -22,10 +21,8 @@ class API
             # country_data[:borders] = hash["borders"],
             # country_data[:languages] = hash["languages"],
             country_data[:flag_link] = hash["flag"]
-            countries_by_code << country_data
+            country_data
         end
-        countries_by_code
-        # refactor away from sandwich code
     end
 
     def self.extract_country(calling_code)
