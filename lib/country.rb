@@ -27,7 +27,11 @@ class Country
     end
 
     def self.get_country_from_array(countries_array)
-        countries_array.each_with_index { |country, index| puts "   #{index += 1}. #{country[0]}" }
+        test = countries_array.map.with_index do |country, index|
+            [index += 1, country[0]]
+        end
+        # binding.pry
+        # countries_array.each_with_index { |country, index| puts "   #{index += 1}. #{country[0]}" }
         # puts out each country in countries array
         # refactor so there's no puts in this class
     end
