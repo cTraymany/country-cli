@@ -4,7 +4,7 @@ class API
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url, follow_redirects: true)
         response.ok?
-        
+        # refactor so the below method doesn't sent request again
     end
 
     def self.get_country_by_calling_code(calling_code)
@@ -25,11 +25,13 @@ class API
             countries_by_code << country_data
         end
         countries_by_code
+        # refactor away from sandwich code
     end
 
     def self.extract_country(calling_code)
         countries_by_code = API.get_country_by_calling_code(calling_code)
         countries_by_code.map { |country| country[:name] }
+        # refactor so I could use the above method intead; do I need this method?
     end
 end
 
