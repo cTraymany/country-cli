@@ -18,7 +18,7 @@ class CLI
                 countries = API.extract_country(calling_code.to_i)
                 puts ""
                 puts "🌎 This country code returns:"
-                Country.get_country_from_array(countries)
+                Country.list_countries(countries).map {|country| puts "   #{country[0]}. #{country[1]}"}
                 self.get_country(calling_code)
             else
                 puts ""
@@ -63,7 +63,9 @@ class CLI
         
     def self.view_my_collection
         puts "🌍 You have viewed the following countries:"
-        Country.countries_viewed
+        Country.countries_viewed.each {|country| puts "   -#{country}"}
+        # binding.pry
+    
         puts ""
         puts "To clear your countries, enter 'clear'."
         self.more_options
