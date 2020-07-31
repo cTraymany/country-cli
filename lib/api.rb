@@ -11,8 +11,7 @@ class API
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url)
 
-
-        test = response.map do |hash|
+        response.map do |hash|
             country_data = {}
             country_data[:name] = hash["name"],
             country_data[:region] = hash["region"],
@@ -31,5 +30,3 @@ class API
         # refactor so I could use the above method intead; do I need this method?
     end
 end
-
-#  test
