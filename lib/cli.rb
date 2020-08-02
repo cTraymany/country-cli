@@ -15,10 +15,13 @@ class CLI
 
         unless calling_code == 'exit'
             if API.valid_country?(calling_code.to_i)
-                countries = API.extract_country(calling_code.to_i)
+                countries = API.get_country_by_calling_code(calling_code)
+                countries.map { |country| country[:name] }
                 puts ""
                 puts "🌎 This country code returns:"
-                Country.list_countries(countries).map {|country| puts "   #{country[0]}. #{country[1]}"}
+                Country.list_countries(countries).map do |country|
+                    puts "   #{country[0]}. #{country[1]}"
+                end
                 self.get_country(calling_code)
             else
                 puts ""
