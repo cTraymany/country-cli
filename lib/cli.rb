@@ -5,7 +5,7 @@ class CLI
         puts "Well, hello there! 👋"
         puts "You seem like someone who appreciates geography."
         puts "To get started, enter a country's calling code!"
-        puts "If you're stuck, try '856,' the country code for Laos! 🇱🇦"
+        puts "If you're stuck, try '856,' the calling code for Laos! 🇱🇦"
         puts "To exit, enter 'exit' at any time."
         self.get_country_by_calling_code
     end
@@ -18,7 +18,7 @@ class CLI
                 countries = API.get_country_by_calling_code(calling_code)
                 countries.map { |country| country[:name] }
                 puts ""
-                puts "🌎 This country code returns:"
+                puts "🌎 This calling code returns:"
                 Country.list_countries(countries).each_with_index do |country, index|
                     puts "   #{index += 1}. #{country}"
                 end
@@ -26,7 +26,7 @@ class CLI
             else
                 puts ""
                 puts "Your input does not belong to a country!"
-                puts "Please enter a valid country code."
+                puts "Please enter a valid calling code."
                 self.get_country_by_calling_code
             end
         end
