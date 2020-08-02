@@ -19,8 +19,8 @@ class CLI
                 countries.map { |country| country[:name] }
                 puts ""
                 puts "🌎 This country code returns:"
-                Country.list_countries(countries).map do |country|
-                    puts "   #{country[0]}. #{country[1]}"
+                Country.list_countries(countries).each_with_index do |country, index|
+                    puts "   #{index += 1}. #{country}"
                 end
                 self.get_country(calling_code)
             else
@@ -52,7 +52,7 @@ class CLI
                 puts "🌏 You chose #{new_country.name}!"
                 puts "#{new_country.name} has a population of #{new_country.population}."
                 puts "It is located in the region of #{new_country.region}, and its capital is #{new_country.capital}."
-                puts "View a photo of #{new_country.name}'s country flag at #{new_country.flag_link} 📷"
+                puts "View a photo of #{new_country.name}'s country flag at 📷#{new_country.flag_link}."
                 puts ""
                 
                 self.view_my_collection
