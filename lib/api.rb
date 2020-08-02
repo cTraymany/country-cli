@@ -4,10 +4,10 @@ class API
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url, follow_redirects: true) # sends request for data to url
         response.ok? # returns a boolean
-        # refactor so the below method doesn't sent request again
     end
-
+    
     def self.get_country_by_calling_code(calling_code)
+        # refactor so request isn't sent twice
         url = "https://restcountries.eu/rest/v2/callingcode/#{calling_code}"
         response = HTTParty.get(url)
 
