@@ -23,9 +23,9 @@ class Country
     end
 
     # while this method lists all results of the API search
-    def self.list_countries(countries_array)
-        test = countries_array.map.with_index do |country, index|
-            [index += 1, country[0]]
+    def self.list_countries(countries_hash)
+        countries_hash.map.with_index do |country, index|
+            [index += 1, country[:name][0]]
         end
     end
 

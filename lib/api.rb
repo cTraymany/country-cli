@@ -23,10 +23,4 @@ class API
             country_data
         end
     end
-
-    def self.extract_country(calling_code)
-        countries_by_code = API.get_country_by_calling_code(calling_code)
-        countries_by_code.map { |country| country[:name] }
-        # refactor so I could use the above method intead; do I need this method?
-    end
 end
