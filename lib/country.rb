@@ -24,8 +24,8 @@ class Country
 
     # while this method lists all results of the API search
     def self.list_countries(countries_hash)
-        countries_hash.map.with_index do |country, index|
-            [index += 1, country[:name][0]]
+        countries_hash.map do |country|
+            country[:name][0]
         end
     end
 
