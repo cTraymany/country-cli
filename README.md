@@ -1,11 +1,11 @@
-# Country CLI
+# Around the World
 
 This CLI application allows the user to search for countries by calling-code in order to view country facts.
 
 
 ## Getting Started
 ### Prerequisites
-This app is run with Ruby. Please have Ruby installed before beginning.
+Around the World is run with Ruby. Please have Ruby installed before beginning.
 
 Fork and clone this repository onto your terminal.
 
