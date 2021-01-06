@@ -17,17 +17,22 @@ class Country
         @@all
     end
 
+    # this method views all country instances created..
     def self.countries_viewed
-        self.all.each { |country| puts "    -#{country.name}" }
+        self.all.map { |country| country.name }
+    end
+
+    # while this method lists all results of the API search
+    def self.list_countries(countries_hash)
+        countries_hash.map do |country|
+            country[:name][0]
+        end
     end
 
     def self.clear_countries
         self.all.clear
     end
-
-    def self.get_country_from_array(countries_array)
-        countries_array.each_with_index { |country, index| puts "   #{index += 1}. #{country[0]}" }
-        # puts out each country in countries array
-    end
 end
 
+# add a find_or_create_by_name method so we don't send multiple requests
+# for the same country
