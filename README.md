@@ -1,4 +1,4 @@
-# Around the World
+# Around the World 🌏
 
 Use this simple CLI application to Learn about a new country! Search by calling-code in order to view 5 data points per country gathered through scraping REST Countries API. Each country’s data is parsed to retrieve nested information for display using Ruby.
 
@@ -25,7 +25,7 @@ or
 See CONTRIBUTING.md for details on code of conduct.
 
 ### Authors
-Chindalath Traymany -  cTraymany
+[Chindalath Traymany](https://www.linkedin.com/in/chindalath/) -  cTraymany
 
 ### License
 This project is licensed under the MIT License - see the LICENSE.md file for details
