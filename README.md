@@ -1,6 +1,6 @@
 # Around the World 🌏
 
-Use this simple CLI application to Learn about a new country! Search by calling-code in order to view 5 data points per country gathered through scraping REST Countries API. Each country’s data is parsed to retrieve nested information for display using Ruby.
+Use this simple CLI application to Learn about a new country! Search by calling-code to view 5 data points per country gathered through scraping REST Countries API. Each country’s data is parsed to retrieve nested information for display using Ruby.
 
 
 ## Getting Started
