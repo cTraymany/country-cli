@@ -34,5 +34,5 @@ class Country
     end
 end
 
-# add a find_or_create_by_name method so we don't send multiple requests
-# for the same country
+# add a find_or_create_by_name method so we don't send multiple
+# requests for the same country
